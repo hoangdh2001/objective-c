@@ -9,7 +9,7 @@
 
 @interface ItemsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label;
-
+@property 
 @end
 
 @implementation ItemsViewController
@@ -129,5 +129,34 @@
 - (IBAction)toolBarItem2:(id)sender {
     [self.label setText:@"Tool 2 Selected"];
 }
+
+// ImageView
+- (void) addImageView {
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 300, 400)];
+    [imgView setImage:[UIImage imageNamed:@"plus"]];
+    [imgView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.view addSubview:imgView];
+}
+
+// ImageView with animation
+- (void) addImageViewWithAnimation {
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 300, 400)];
+    
+    imgView.animationImages = [NSArray arrayWithObjects:[UIImage imageNamed:@"plus1"], [UIImage imageNamed:@"plus2"], nil];
+    imgView.animationDuration = 4.0;
+    imgView.contentMode = UIViewContentModeCenter;
+    [imgView startAnimating];
+    [self.view addSubview:imgView];
+}
+
+// TextView
+//- (void)addTextView {
+//    UITextView *myTextView = [[UITextView alloc]initWithFrame:CGRectMake(10, 50, 300, 200)];
+//    [myTextView setText:@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aiqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."];
+//
+//}
+
+// Switch
+
 
 @end
